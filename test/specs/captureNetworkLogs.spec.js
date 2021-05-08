@@ -6,7 +6,7 @@ const LoginPage = require('../pageobjects/login.page')
 describe('Capture Network Logs', () => {
     it('Capture All get calls', () => {
 
-        var output = browser.mock('**',{method:'get'})
+        var output = browser.mock('**', { method:'get' })
         browser.url('https://reqres.in')
         
         Object.keys(output.calls).forEach(function(key){
@@ -20,7 +20,7 @@ describe('Capture Network Logs', () => {
 
     it('Capture All post calls', () => {
 
-        var output = browser.mock('**',{method:'post'})
+        var output = browser.mock('**', { method:'post' })
         browser.url('https://reqres.in')
         
         Object.keys(output.calls).forEach(function(key){
@@ -34,7 +34,7 @@ describe('Capture Network Logs', () => {
 
     it('Capture a specific calls', () => {
 
-        var output1 = browser.mock('**/login',{method:'post'})
+        var output1 = browser.mock('**/authenticate', { method:'post' })
         browser.url('https://the-internet.herokuapp.com/login')
         
         LoginPage.inputUsername.setValue('asdfasf')
@@ -43,7 +43,7 @@ describe('Capture Network Logs', () => {
 
         Object.keys(output1.calls).forEach(function(key){
             console.log(output1.calls[key].url)
-            fs.writeFile('./json/login.json', JSON.stringify(output1.calls[key]), function(err){
+            fs.writeFile('./json/authenticate.json', JSON.stringify(output1.calls[key]), function(err){
                 if(err) throw err;
             })
         })
@@ -52,7 +52,7 @@ describe('Capture Network Logs', () => {
  
     it('Verify request data', () => {
 
-        var output2 = browser.mock('**/authenticate',{method:'post'})
+        var output2 = browser.mock('**/authenticate',{ method:'post' })
         browser.url('https://the-internet.herokuapp.com/login')
         
         LoginPage.inputUsername.setValue('asdfasf')
@@ -64,7 +64,7 @@ describe('Capture Network Logs', () => {
 
     it('Verify response data', () => {
 
-        var output3 = browser.mock('**/api/users/2',{method:'get'})
+        var output3 = browser.mock('**/api/users/2',{ method:'get' })
         browser.url('https://reqres.in')
         
         $('//*[@data-id="users-single"]/a').scrollIntoView()
