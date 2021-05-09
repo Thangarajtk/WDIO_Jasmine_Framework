@@ -64,7 +64,7 @@ describe('Capture Network Logs', () => {
 
     it('Verify response data', () => {
 
-        var output3 = browser.mock('**/api/users/2',{ method:'get' })
+        var output3 = browser.mock('**/api/users/2', { method:'get' })
         browser.url('https://reqres.in')
         
         $('//*[@data-id="users-single"]/a').scrollIntoView()

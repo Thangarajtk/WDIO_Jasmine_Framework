@@ -17,10 +17,15 @@ This is a sample WebdriverIO (v7) Jasmine framework project to automate web appl
 3. On the terminal, Run command `npm install` to install all the dependencies present in the package.json file.
 4. On the terminal, Run command `npm test` to execute the script.
 
+## Clean the "reports" directory
+On the terminal, Run command `npm run cleanup` to clean the "reports" directory. Execute this command before the execution of test.
+
 ## Reports
-- spec-reporter
+- Spec Reporter
+- Junit Reporter
 
 # Key Features
 - Jasmine framework
 - Page Object design pattern
 - Babel Setup
+- Docker file Integration

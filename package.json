@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "cleanup": "rmdir /Q /S reports",
     "test": "npx wdio wdio.conf.js"
   },
   "keywords": [],
@@ -19,10 +20,12 @@
     "@babel/register": "^7.13.16",
     "@wdio/devtools-service": "^7.5.7",
     "@wdio/jasmine-framework": "^7.5.3",
+    "@wdio/junit-reporter": "^7.5.7",
     "@wdio/local-runner": "^7.5.7",
+    "@wdio/selenium-standalone-service": "^7.5.7",
     "@wdio/spec-reporter": "^7.5.7",
     "@wdio/sync": "^7.5.7",
-    "chromedriver": "^90.0.0",
-    "wdio-chromedriver-service": "^7.0.0"
+    "wdio-docker-service": "^3.1.2",
+    "webdriverio": "^7.5.7"
   }
 }
