@@ -13,27 +13,34 @@ This is a sample WebdriverIO (v7) Jasmine framework project to automate web appl
 
 ## :pushpin: Updating all the dependencies in package.json
 The below command will update the dependencies to the latest versions (including major version changes) in the package.json file
-```
+```bash
 npx npm-check-updates -u
 ```
 To go ahead with the upgrades, run the following command:
-```
+```bash
 npm install
 ```
 ## :pushpin: Installation
-1. Clone the project from GitHub. 
-2. Open `Terminal` from the project root directory `WebdriverIO_Jasmine_Framework`  on the VS code.
-3. Command to install all the dependencies present in the package.json
-```
+:point_right: Clone the project from GitHub.
+
+:point_right: Open `Terminal` from the project root directory `WebdriverIO_Jasmine_Framework`  on the VS code.
+
+:point_right: Command to install all the dependencies present in the package.json
+```bash
 npm install
 ```
-4. Command to execute the test script.
-```
+
+:point_right: Command to execute the test script.
+```bash
 npm test
 ```
 
 ## :pushpin: Clean the "reports" directory
-On the terminal, Run command `npm run cleanup` to clean the "reports" directory. Execute this command before the execution of test.
+:point_right: Command to clean the "reports" directory. 
+```bash
+npm run cleanup
+```
+Note: Execute this command before the execution of test.
 
 ## :pushpin: Reports
 :point_right: Spec Reporter
@@ -43,6 +50,8 @@ On the terminal, Run command `npm run cleanup` to clean the "reports" directory.
 :point_right: HTML Reporter
 
 :point_right: PDF Report (Generated from an HTML Report)
+
+:point_right: Timeline Reporter
 
 ## :pushpin: Key Features
 :point_right: Jasmine framework

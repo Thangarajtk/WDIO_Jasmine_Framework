@@ -1,3 +1,4 @@
+const { TimelineService } = require('wdio-timeline-reporter/timeline-service');
 const { ReportAggregator } = require('wdio-html-nice-reporter');
 let reportAggregator;
 
@@ -60,8 +61,7 @@ exports.config = {
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
-        maxInstances: 5,
-        //
+        // maxInstances: 5,
         browserName: 'chrome',
         acceptInsecureCerts: true,
         'goog:chromeOptions': {
@@ -69,6 +69,7 @@ exports.config = {
                 '--no-sandbox',
                 '--disable-infobars',
                 '--disable-gpu',
+                // '--headless',
                 '--window-size=1440,735'
             ],
         }
@@ -76,6 +77,9 @@ exports.config = {
         // it is possible to configure which logTypes to include/exclude.
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
+        // },
+        // {
+        //     browserName: 'MicrosoftEdge'
     }],
     //
     // ===================
@@ -125,7 +129,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['selenium-standalone'],
+    services: ['selenium-standalone', [TimelineService]],
 
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -160,8 +164,20 @@ exports.config = {
             showInBrowser: true,
             collapseTests: false,
             //to turn on screenshots after every test
-            useOnAfterCommandForScreenshot: true,
-        }]
+            useOnAfterCommandForScreenshot: false,
+        }],
+        ['timeline',
+            {
+                outputDir: './reports/timeline-reports/',
+                fileName: 'timeline-reporter.html',
+                embedImages: true,
+                images: {
+                    quality: 80,
+                    resize: false,
+                    reductionRatio: 2
+                },
+                screenshotStrategy: 'none'
+            }]
     ],
 
     //
@@ -237,8 +253,8 @@ exports.config = {
             outputDir: './reports/html-reports/',
             filename: 'master-report.html',
             reportTitle: 'Master HTML Report',
-            browserName: capabilities.browserName,
-            collapseTests: true,
+            browserName: capabilities[0].browserName,
+            collapseTests: true
         });
         reportAggregator.clean();
     },
@@ -270,7 +286,7 @@ exports.config = {
      * @param {Object}         browser      instance of created browser/device session
      */
     before: function (capabilities, specs) {
-        require('expect-webdriverio').setOptions({ wait: 2000, interval: 100 })
+        require('expect-webdriverio').setOptions({ wait: 2000, interval: 100 });
     },
     /**
      * Runs before a WebdriverIO command gets executed.
