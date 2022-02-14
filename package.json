@@ -6,7 +6,8 @@
   "scripts": {
     "cleanup": "rmdir /Q /S reports",
     "test": "npx wdio ./ui-automation/config/wdio.conf.js",
-    "pdf": "node ./ui-automation/report/make-pdf.js"
+    "pdf": "node ./ui-automation/report/make-pdf.js",
+    "generateAllureReport": "allure generate ./reports/allure-results --clean && allure open"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,7 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/register": "^7.17.0",
     "@rpii/wdio-html-reporter-pdf": "^7.0.1",
+    "@wdio/allure-reporter": "^7.16.14",
     "@wdio/cli": "^7.16.14",
     "@wdio/devtools-service": "^7.16.14",
     "@wdio/jasmine-framework": "^7.16.14",

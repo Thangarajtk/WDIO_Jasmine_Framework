@@ -177,7 +177,12 @@ exports.config = {
                     reductionRatio: 2
                 },
                 screenshotStrategy: 'none'
-            }]
+            }],
+        ['allure', {
+            outputDir: './reports/allure-results',
+            disableWebdriverStepsReporting: true,
+            disableWebdriverScreenshotsReporting: true,
+        }]
     ],
 
     //
