@@ -129,8 +129,8 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['docker',
-        //'selenium-standalone', 
+    services: [//'docker',
+        'selenium-standalone', 
         [TimelineService]],
 
     // Framework you want to run your specs with.
@@ -195,7 +195,8 @@ exports.config = {
         // Jasmine default timeout
         defaultTimeoutInterval: 90000,
         // Whether to stop execution of the suite after the first spec failure
-        failFast: false,
+        // failFast: true,
+        stopOnSpecFailure: true,
         //
         // The Jasmine framework allows it to intercept each assertion in order to log the state of the application
         // or website depending on the result. For example, it is pretty handy to take a screenshot every time
