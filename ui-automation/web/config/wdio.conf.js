@@ -28,7 +28,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './ui-automation/test/specs/**/*.spec.js'
+        './ui-automation/web/test/specs/**/*.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
