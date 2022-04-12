@@ -7,7 +7,8 @@
     "cleanup": "rmdir /Q /S reports",
     "test": "npx wdio ./ui-automation/web/config/wdio.conf.js",
     "pdf": "node ./ui-automation/report/make-pdf.js",
-    "generateAllureReport": "allure generate ./reports/allure-results --clean && allure open"
+    "generateAllureReport": "allure generate ./reports/allure-results --clean && allure open",
+    "android.test": "npx wdio ./ui-automation/mobile/config/wdio.conf.js"
   },
   "keywords": [],
   "author": "",
