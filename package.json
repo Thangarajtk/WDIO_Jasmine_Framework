@@ -10,8 +10,16 @@
     "generateAllureReport": "allure generate ./reports/allure-results --clean && allure open",
     "android.test": "npx wdio ./ui-automation/mobile/config/wdio.conf.js"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thangarajtk/WDIO_Jasmine_Framework.git"
+  },
+  "keywords": [
+    "WebdriverIO",
+    "appium",
+    "android"
+  ],
+  "author": "Thangaraj",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.17.6",
