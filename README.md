@@ -1,5 +1,5 @@
 # WebdriverIO_Jasmine_Framework
-[WebdriverIO 7.16.14](http://webdriver.io/)
+[WebdriverIO 7.19.5](http://webdriver.io/)
 
 <img src = "https://user-images.githubusercontent.com/48508827/117580229-ac1d5d80-b114-11eb-8a0a-89ae0c9a031b.png"> <img src = "https://user-images.githubusercontent.com/48508827/117580298-f272bc80-b114-11eb-8e10-3e4e2c6c1fa9.png" height = "160">
 
