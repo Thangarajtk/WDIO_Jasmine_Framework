@@ -6,9 +6,12 @@
   "scripts": {
     "cleanup": "rmdir /Q /S reports",
     "test": "npx wdio ./ui-automation/web/config/wdio.conf.js",
+    "pretest:docker": "docker-compose up -d",
+    "test:docker": "npx wdio ./ui-automation/web/config/wdio.docker.conf.js",
+    "posttest:docker": "docker-compose down",
     "pdf": "node ./ui-automation/report/make-pdf.js",
     "generateAllureReport": "allure generate ./reports/allure-results --clean && allure open",
-    "android.test": "npx wdio ./ui-automation/mobile/config/wdio.conf.js"
+    "test:android": "npx wdio ./ui-automation/mobile/config/wdio.android.conf.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +20,8 @@
   "keywords": [
     "WebdriverIO",
     "appium",
-    "android"
+    "android",
+    "native app"
   ],
   "author": "Thangaraj",
   "license": "ISC",

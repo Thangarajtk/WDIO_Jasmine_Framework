@@ -1,4 +1,4 @@
-# Appium Mobile Automation - Android
+# WDIO Appium - Mobile Automation - Android
 
 <img src = "https://user-images.githubusercontent.com/48508827/136083498-e707b438-0ade-47fc-bb2b-fce34f8d04e3.png" width="500" height="300">
 

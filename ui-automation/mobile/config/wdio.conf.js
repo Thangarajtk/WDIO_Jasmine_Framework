@@ -1,12 +1,10 @@
-import { join } from 'path';
-
 exports.config = {
     //
     // ====================
     // Runner Configuration
     // ====================
     //
-    port: 4723,
+    // port: 4723,
     //
     // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
     // on a remote machine).
@@ -39,23 +37,7 @@ exports.config = {
     // ============
     // For all capabilities please check
     // http://appium.io/docs/en/writing-running-appium/caps/#general-capabilities
-    capabilities: [{
-        platformName: "Android",
-        maxInstances: 1,
-        // For W3C the appium capabilities need to have an extension prefix
-        // http://appium.io/docs/en/writing-running-appium/caps/
-        // This is `appium:` for all Appium Capabilities which can be found here
-        "appium:platformVersion": "11",
-        "appium:deviceName": "Pixel_3a_API_30",
-        "appium:systemPort": 7878,
-        "appium:automationName": "UiAutomator2",
-        "appium:app": join(process.cwd(), 'ui-automation', 'mobile', 'app', 'Android.SauceLabs.Mobile.Sample.app.2.7.1.apk'),
-        "appium:appPackage": "com.swaglabsmobileapp",
-        "appium:appActivity": "com.swaglabsmobileapp.MainActivity",
-        'appium:noReset': true,
-        'appium:newCommandTimeout': 180,
-        "appium:autoGrantPermissions": true
-    }],
+    capabilities: [],
     //
     // ===================
     // Test Configurations
@@ -104,7 +86,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['appium'],
+    services: [],
 
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
