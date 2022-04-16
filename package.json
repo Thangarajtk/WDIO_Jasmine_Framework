@@ -1,17 +1,18 @@
 {
   "name": "webdriverio_jasmine_framework",
   "version": "1.0.0",
-  "description": "WebdriverIO with Jasmine framework",
+  "description": "WebdriverIO - Jasmine framework for Web and Mobile Automation",
   "main": "index.js",
   "scripts": {
+    "clean": "rm -rf node_modules && rm -rf package-lock.json && npm install",
     "cleanup": "rmdir /Q /S reports",
-    "test": "npx wdio ./ui-automation/web/config/wdio.conf.js",
+    "test": "npx wdio ./automation/web/config/wdio.conf.js",
     "pretest:docker": "docker-compose up -d",
-    "test:docker": "npx wdio ./ui-automation/web/config/wdio.docker.conf.js",
+    "test:docker": "npx wdio ./automation/web/config/wdio.docker.conf.js",
     "posttest:docker": "docker-compose down",
-    "pdf": "node ./ui-automation/report/make-pdf.js",
+    "pdf": "node ./automation/report/make-pdf.js",
     "generateAllureReport": "allure generate ./reports/allure-results --clean && allure open",
-    "test:android": "npx wdio ./ui-automation/mobile/config/wdio.android.conf.js"
+    "test:android": "npx wdio ./automation/mobile/config/wdio.android.conf.js"
   },
   "repository": {
     "type": "git",

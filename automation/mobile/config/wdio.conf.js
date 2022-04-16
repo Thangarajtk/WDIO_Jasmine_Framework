@@ -25,7 +25,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './ui-automation/mobile/test/specs/**/*.spec.js'
+        './automation/mobile/test/specs/**/*.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -179,8 +179,8 @@ exports.config = {
      * @param {Object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
      */
-    // onPrepare: function (config, capabilities) {
-
+    // onPrepare: async function (config, capabilities) {
+        
     // },
     /**
      * Gets executed before a worker process is spawned and can be used to initialise specific service
@@ -288,7 +288,7 @@ exports.config = {
      * @param {<Object>} results object containing test results
      */
     // onComplete: function (exitCode, config, capabilities, results) {
-
+       
     // },
     /**
     * Gets executed when a refresh happens.
