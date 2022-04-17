@@ -2,10 +2,10 @@ import { main as appiumServer } from 'appium';
 
 class AppiumServer {
 
-    public async server() {
+    async startServer() {
         let args = {};
         return await appiumServer(args);
     }
 }
 
-module.exports = new AppiumServer();
+export default new AppiumServer();
