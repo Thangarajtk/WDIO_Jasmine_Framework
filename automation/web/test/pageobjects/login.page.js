@@ -1,4 +1,5 @@
-const Page = require('./page');
+import Page from './page';
+import { waitAndSetValue, waitAndClick } from '../../utils/helper';
 
 /**
  * sub page containing specific selectors and methods for a specific page
@@ -17,17 +18,17 @@ class LoginPage extends Page {
      * e.g. to login using username and password
      */
     async login (username, password) {
-        await this.inputUsername.setValue(username);
-        await this.inputPassword.setValue(password);
-        await this.btnSubmit.click();
+        await waitAndSetValue(this.inputUsername, username, 1000);
+        await waitAndSetValue(this.inputPassword, password, 1000);
+        await waitAndClick(this.btnSubmit, 1000);
     }
 
     /**
      * overwrite specifc options to adapt it to page object
      */
-    async open () {
-        return super.open('login');
+    async openApplication () {
+        await super.open('login');
     }
 }
 
-module.exports = new LoginPage();
+export default new LoginPage();

@@ -10,6 +10,7 @@
     "pretest:docker": "docker-compose up -d",
     "test:docker": "npx wdio ./automation/web/config/wdio.docker.conf.js",
     "posttest:docker": "docker-compose down",
+    "test:devtools": "npx wdio ./automation/web/config/wdio.devtools.conf.js",
     "pdf": "node ./automation/report/make-pdf.js",
     "generateAllureReport": "allure generate ./reports/allure-results --clean && allure open",
     "test:android": "npx wdio ./automation/mobile/config/wdio.android.conf.js"

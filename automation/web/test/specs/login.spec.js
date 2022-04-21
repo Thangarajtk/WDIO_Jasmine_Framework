@@ -1,34 +1,34 @@
-const LoginPage = require('../pageobjects/login.page')
-const SecurePage = require('../pageobjects/secure.page')
-const logindata = require('../../resources/logindata')
-const constants = require('../../constants/FrameworkConstants')
+import LoginPage from '../pageobjects/login.page';
+import SecurePage from '../pageobjects/secure.page';
+import { username, password, invalidUsername, invalidPassword } from '../../resources/logindata';
+import { login as _login } from '../../constants/FrameworkConstants';
 
 const { LOGIN_SUCCESS, LOGIN_ERROR_INVALID_USERNAME,
-    LOGIN_ERROR_INVALID_PASSWORD } = constants.login;
+    LOGIN_ERROR_INVALID_PASSWORD } = _login;
 
 describe('Login', () => {
 
     beforeEach(async () => {
-        await LoginPage.open();
+        await LoginPage.openApplication();
     });
 
     it('should login with valid credentials', async () => {
-        await LoginPage.login(logindata.username, logindata.password);
+        await LoginPage.login(username, password);
 
-        expect(SecurePage.flashAlert).toBeExisting();
-        expect(SecurePage.flashAlert).toHaveTextContaining(LOGIN_SUCCESS);
+        await expectAsync(SecurePage.flashAlert).toBeExisting(); // Jasmine uses async matchers called expectAsync.
+        await expectAsync(SecurePage.flashAlert).toHaveTextContaining(LOGIN_SUCCESS);
     });
 
     it('should throw error for invalid username', async () => {
-        await LoginPage.login(logindata.invalidUsername, logindata.password);
+        await LoginPage.login(invalidUsername, password);
 
-        expect(LoginPage.flashMessage).toHaveTextContaining(LOGIN_ERROR_INVALID_USERNAME);
+        await expectAsync(LoginPage.flashMessage).toHaveTextContaining(LOGIN_ERROR_INVALID_USERNAME);
     });
 
     it('should throw error for invalid password', async () => {
-        await LoginPage.login(logindata.username, logindata.invalidPassword);
+        await LoginPage.login(username, invalidPassword);
 
-        expect(LoginPage.flashMessage).toHaveTextContaining(LOGIN_ERROR_INVALID_PASSWORD);
+        await expectAsync(LoginPage.flashMessage).toHaveTextContaining(LOGIN_ERROR_INVALID_PASSWORD);
     });
 });
 

@@ -2,6 +2,9 @@ import { config as sharedConfig } from './wdio.conf';
 
 exports.config = {
     ...sharedConfig,
+    specs: [
+        './automation/web/devtool/chromeDevToolService.spec.js'
+    ],
     services: ['devtools'],
     capabilities: [{
         browserName: 'chrome',

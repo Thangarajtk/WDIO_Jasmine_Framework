@@ -79,7 +79,7 @@ exports.config = {
         // excludeDriverLogs: ['bugreport', 'server'],
         // },
         // {
-        //     browserName: 'MicrosoftEdge'
+        // browserName: 'MicrosoftEdge'
     }],
     //
     // ===================
