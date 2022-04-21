@@ -43,6 +43,7 @@
     "@wdio/spec-reporter": "^7.19.5",
     "appium": "^2.0.0-beta.25",
     "appium-doctor": "^1.16.0",
+    "axios": "^0.26.1",
     "wdio-chromedriver-service": "^7.3.2",
     "wdio-docker-service": "^3.2.0",
     "wdio-html-nice-reporter": "^8.0.0",

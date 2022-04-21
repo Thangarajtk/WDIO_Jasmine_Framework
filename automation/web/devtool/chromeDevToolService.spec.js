@@ -1,5 +1,3 @@
-let fs = require('fs')
-
 describe('Chrome Dev Tools', () => {
     it('should listen on network events', () => {
         browser.cdp('Network', 'enable')
@@ -15,7 +13,7 @@ describe('Chrome Dev Tools', () => {
          */
         browser.cdp('Profiler', 'enable')
         browser.cdp('Debugger', 'enable')
-    
+
         /**
          * start test coverage profiler
          */
@@ -23,9 +21,9 @@ describe('Chrome Dev Tools', () => {
             callCount: true,
             detailed: true
         })
-    
+
         browser.url('http://google.com')
-    
+
         /**
          * capture test coverage
          */
