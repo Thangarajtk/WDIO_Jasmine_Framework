@@ -63,4 +63,6 @@ Note: Execute this command before the execution of test.
 
 :point_right: Babel Setup
 
-:point_right: Docker file Integration
+:point_right: Docker Service
+
+:point_right: Support for cross browser testing and Parallel test execution
