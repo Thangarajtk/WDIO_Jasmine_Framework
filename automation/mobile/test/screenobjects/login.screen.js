@@ -14,7 +14,7 @@ class LoginScreen extends AppScreen {
         await this.btnLogin.click();
     }
 
-    async login({ username, password }) {
+    async login(username, password) {
         await this.txtFieldUsername.setValue(username);
         await this.txtFieldPassword.setValue(password);
         await this.tapOnLoginButton();
