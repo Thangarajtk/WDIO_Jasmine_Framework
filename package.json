@@ -13,7 +13,9 @@
     "test:devtools": "npx wdio ./automation/web/config/wdio.devtools.conf.js",
     "pdf": "node ./automation/report/make-pdf.js",
     "generateAllureReport": "allure generate ./reports/allure-results --clean && allure open",
-    "test:android": "npx wdio ./automation/mobile/config/wdio.android.conf.js"
+    "test:android": "npx wdio ./automation/mobile/config/wdio.android.conf.js",
+    "install-driver:android": "appium driver install uiautomator2",
+    "install-driver:ios": "appium driver install xcuitest"
   },
   "repository": {
     "type": "git",
