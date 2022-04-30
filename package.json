@@ -51,6 +51,7 @@
     "wdio-docker-service": "^3.2.0",
     "wdio-html-nice-reporter": "^8.0.0",
     "wdio-timeline-reporter": "^5.1.4",
+    "wdio-wiremock-service": "^6.0.7",
     "webdriverio": "^7.19.5"
   }
 }

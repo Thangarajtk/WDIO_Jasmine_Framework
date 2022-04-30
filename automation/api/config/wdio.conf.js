@@ -1,18 +1,13 @@
-import AppiumServer from '../utils/appiumserver';
-
-let server;
-
 exports.config = {
     //
     // ====================
     // Runner Configuration
     // ====================
     //
-    // port: 4723,
-    //
     // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
     // on a remote machine).
     runner: 'local',
+    //
     // ==================
     // Specify Test Files
     // ==================
@@ -29,7 +24,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './automation/mobile/test/specs/**/*.spec.js'
+        './automation/api/test/specs/**/*.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -39,9 +34,38 @@ exports.config = {
     // ============
     // Capabilities
     // ============
-    // For all capabilities please check
-    // http://appium.io/docs/en/writing-running-appium/caps/#general-capabilities
-    capabilities: [],
+    // Define your capabilities here. WebdriverIO can run multiple capabilities at the same
+    // time. Depending on the number of capabilities, WebdriverIO launches several test
+    // sessions. Within your capabilities you can overwrite the spec and exclude options in
+    // order to group specific specs to a specific capability.
+    //
+    // First, you can define how many instances should be started at the same time. Let's
+    // say you have 3 different capabilities (Chrome, Firefox, and Safari) and you have
+    // set maxInstances to 1; wdio will spawn 3 processes. Therefore, if you have 10 spec
+    // files and you set maxInstances to 10, all spec files will get tested at the same time
+    // and 30 processes will get spawned. The property handles how many capabilities
+    // from the same test should run tests.
+    //
+    maxInstances: 10,
+    //
+    // If you have trouble getting all important capabilities together, check out the
+    // Sauce Labs platform configurator - a great tool to configure your capabilities:
+    // https://docs.saucelabs.com/reference/platforms-configurator
+    //
+    capabilities: [{
+
+        // maxInstances can get overwritten per capability. So if you have an in-house Selenium
+        // grid with only 5 firefox instances available you can make sure that not more than
+        // 5 instances get started at a time.
+        // maxInstances: 5,
+        browserName: 'chrome',
+        acceptInsecureCerts: true,
+        // If outputDir is provided WebdriverIO can capture driver session logs
+        // it is possible to configure which logTypes to include/exclude.
+        // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
+        // excludeDriverLogs: ['bugreport', 'server'],
+        // },
+    }],
     //
     // ===================
     // Test Configurations
@@ -90,7 +114,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: [],
+    services: ['wiremock', { port: 9000 }],
 
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -183,9 +207,8 @@ exports.config = {
      * @param {Object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
      */
-    onPrepare: async function (config, capabilities) {
-        console.log('-----STARTING APPIUM SERVER-----')
-        server = AppiumServer.startServer();
+    onPrepare: function (config, capabilities) {
+
     },
     /**
      * Gets executed before a worker process is spawned and can be used to initialise specific service
@@ -250,9 +273,8 @@ exports.config = {
     /**
      * Function to be executed after a test (in Mocha/Jasmine).
      */
-    afterTest: function(test, context, { error, result, duration, passed, retries }) {
-        driver.closeApp();
-    },
+    // afterTest: function(test, context, { error, result, duration, passed, retries }) {
+    // },
     /**
      * Hook that gets executed after the suite has ended
      * @param {Object} suite suite details
@@ -294,7 +316,7 @@ exports.config = {
      * @param {<Object>} results object containing test results
      */
     onComplete: function (exitCode, config, capabilities, results) {
-        
+
     },
     /**
     * Gets executed when a refresh happens.
