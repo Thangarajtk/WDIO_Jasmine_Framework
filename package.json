@@ -15,7 +15,8 @@
     "generateAllureReport": "allure generate ./reports/allure-results --clean && allure open",
     "test:android": "npx wdio ./automation/mobile/config/wdio.android.conf.js",
     "install-driver:android": "appium driver install uiautomator2",
-    "install-driver:ios": "appium driver install xcuitest"
+    "install-driver:ios": "appium driver install xcuitest",
+    "test:api": "npx wdio ./automation/api/config/wdio.conf.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,9 @@
     "WebdriverIO",
     "appium",
     "android",
-    "native app"
+    "native app",
+    "api automation",
+    "wiremock"
   ],
   "author": "Thangaraj",
   "license": "ISC",

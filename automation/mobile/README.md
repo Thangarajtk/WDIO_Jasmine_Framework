@@ -91,3 +91,5 @@ Type url `chrome://inspect/#devices` in the desktop chrome browser and start ins
 
 <img width="800" alt="Capture" src="https://user-images.githubusercontent.com/48508827/146682499-00cb158a-5f9b-4daf-87ba-ca197b2804de.PNG">
 
+## :pushpin: Execute tests
+1. Open terminal and Run command `npm run test:android`

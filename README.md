@@ -34,7 +34,7 @@ npm install
 ```bash
 npm test
 ```
-## Execute tests on Docker
+## :pushpin: Execute tests on Docker
 1. On the terminal, Run command `docker-compose up -d` to start the docker service. 
 2. Open new terminal and Run command `npm test` to execute the scripts on docker container.
 
