@@ -16,6 +16,7 @@
     "test:android": "npx wdio ./automation/mobile/config/wdio.android.conf.js",
     "install-driver:android": "appium driver install uiautomator2",
     "install-driver:ios": "appium driver install xcuitest",
+    "start-android-emulator": "start-android-emulator",
     "test:api": "npx wdio ./automation/api/config/wdio.conf.js"
   },
   "repository": {
@@ -50,6 +51,7 @@
     "appium": "^2.0.0-beta.33",
     "appium-doctor": "^1.16.0",
     "axios": "^0.27.2",
+    "start-android-emulator": "^2.0.0",
     "wdio-chromedriver-service": "^7.3.2",
     "wdio-docker-service": "^3.2.0",
     "wdio-html-nice-reporter": "^8.0.0",

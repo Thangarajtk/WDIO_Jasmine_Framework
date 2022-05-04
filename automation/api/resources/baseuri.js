@@ -1,0 +1,1 @@
+export const MOCK_API_BASEURI = "http://localhost:9000";
