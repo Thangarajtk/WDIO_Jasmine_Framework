@@ -9,6 +9,9 @@ class LoginScreen extends AppScreen {
     get txtFieldUsername() { return $('~test-Username'); }
     get txtFieldPassword() { return $('~test-Password'); }
     get btnLogin() { return $('~test-LOGIN'); }
+    get txtErrorMessage() {
+        return $("//android.view.ViewGroup[@content-desc='test-Error message']/android.widget.TextView");
+    }
 
     async tapOnLoginButton() {
         await this.btnLogin.click();
@@ -18,6 +21,10 @@ class LoginScreen extends AppScreen {
         await this.txtFieldUsername.setValue(username);
         await this.txtFieldPassword.setValue(password);
         await this.tapOnLoginButton();
+    }
+
+    async getErrorMessageForInvalidLogin() {
+        return await this.txtErrorMessage.getText();
     }
 }
 
