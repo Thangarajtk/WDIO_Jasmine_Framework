@@ -4,12 +4,11 @@ describe('Mock Api Test using WireMock', () => {
 
     it("Should return the mock response data", async () => {
 
-        let response = await browser.call(async () => {
-            await mockapiService.getMockResponse()
-                .then(data => response = data)
-                .catch(err => console.log(err))
-        });
+        let response;
 
+        await browser.call(async () => {
+            response = await mockapiService.getMockResponse();
+        });
         expect(response.status).toEqual(200);
     });
 });
