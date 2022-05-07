@@ -1,8 +1,6 @@
 // babel version
 const path = require("path");
-const fs = require("fs-extra");
-
-let printPdf = require('@rpii/wdio-html-reporter-pdf').default;
+const printPdf = require('@rpii/wdio-html-reporter-pdf').default;
 
 (async () => {
     let args = process.argv.slice(2);
