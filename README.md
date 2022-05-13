@@ -8,8 +8,9 @@ WebdriverIO is a progressive automation framework built to automate modern web a
 This is a sample WebdriverIO (v7) Jasmine framework project to automate web applications using Javascript. This framework was designed with Page Object Pattern.
 
 ## :rocket: Quick Start
-1. Install [NodeJS](https://nodejs.org/en/download/) >= 16
-2. Download Visual Studio Code [IDE](https://code.visualstudio.com/download) based on the OS.
+:point_right: Install [NodeJS](https://nodejs.org/en/download/) >= 16
+
+:point_right: Download Visual Studio Code [IDE](https://code.visualstudio.com/download) based on the OS.
 
 ## :pushpin: Updating all the dependencies in package.json
 The below command will update the dependencies to the latest versions (including major version changes) in the package.json file
@@ -66,3 +67,9 @@ Note: Execute this command before the execution of test.
 :point_right: Docker Service
 
 :point_right: Support for cross browser testing and Parallel test execution
+
+## :rocket: Quick Start - Appium (Mobile Automation)
+[Appium - Mobile automation README](/automation/mobile/README.md)
+
+## :rocket: Quick Start - API
+[Click here to open API README](/automation/api/README.md)
