@@ -35,8 +35,8 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.17.10",
-    "@babel/core": "^7.17.10",
-    "@babel/preset-env": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
     "@babel/register": "^7.17.7",
     "@rpii/wdio-html-reporter-pdf": "^7.0.3",
     "@wdio/allure-reporter": "^7.19.7",
