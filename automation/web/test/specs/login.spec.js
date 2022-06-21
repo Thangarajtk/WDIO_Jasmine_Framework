@@ -3,6 +3,8 @@ import SecurePage from '../pageobjects/secure.page';
 import { username, password } from '../../resources/logindata';
 import { login as _login } from '../../constants/FrameworkConstants';
 
+const { LOGIN_SUCCESS } = _login;
+
 describe('Login', () => {
 
     beforeEach(async () => {
